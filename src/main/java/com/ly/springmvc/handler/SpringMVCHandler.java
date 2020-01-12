@@ -14,9 +14,24 @@ import org.springframework.web.bind.annotation.*;
 public class SpringMVCHandler {
 
     /**
+     * @param
+     * @return java.lang.String
+     * @Description: 映射cookie信息到请求处理方法的形参中
+     * @author luoyong
+     * @create 18:49 2020/1/12
+     * @last modify by [LuoYong 18:49 2020/1/12 ]
+     */
+    @RequestMapping("testCookieValue")
+    public String testCookieValue(@CookieValue("JSESSIONID") String sessionId) {
+        System.out.println("sessionId:" + sessionId);
+        return "success";
+    }
+
+
+    /**
      * @param acceptLanguage
      * @return java.lang.String
-     * @Description:  映射请求头信息到请求处理方法的形参中
+     * @Description: 映射请求头信息到请求处理方法的形参中
      * @author luoyong
      * @create 18:42 2020/1/12
      * @last modify by [LuoYong 18:42 2020/1/12 ]

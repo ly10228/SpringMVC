@@ -10,6 +10,10 @@
   <head>
     <title>SpringMVC</title>
   </head>
+
+  <a href="mvc/testCookieValue"> Test CookieValue</a>
+  <br/>
+
   <a href="mvc/testRequestHeader">Test RequestHeader</a>
   <br/>
   <!--
