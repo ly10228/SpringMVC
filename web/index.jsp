@@ -27,8 +27,12 @@
   <%--模拟get请求--%>
   <a href="mvc/testRequestMappingMethod">Test RequestMapping</a>
   <br/>
-<%-- 映射请求参数   以及  请求头信息--%>
+   <%-- 映射请求参数   以及  请求头信息--%>
   <a href="mvc/testRequestMappingParamsAndHeaders?username=tom&age=22">Test RequestMapping Params  Headers</a>
   <br/>
+  <%--带参数的URL--%>
+  <a href="mvc/testPathVariable/Admin/1001">Test PathVaribale</a>
+  <br/>
+
   </body>
 </html>
