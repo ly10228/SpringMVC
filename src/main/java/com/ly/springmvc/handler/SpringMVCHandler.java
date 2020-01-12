@@ -120,7 +120,27 @@ public class SpringMVCHandler {
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public String testRestPOST() {
         System.out.println("REST POST");
+        return "success";
+    }
 
+    /**
+     * @param userName
+     * @param age
+     * @return java.lang.String
+     * @Description: testRequestParam  映射请求参数到请求处理方法的形参
+     * 	 1. 如果请求参数名与形参名一致， 则可以省略@RequestParam的指定。
+     * 	 2. @RequestParam 注解标注的形参必须要赋值。 必须要能从请求对象中获取到对应的请求参数。
+     * 		可以使用required来设置为不是必须的。
+     * 	 3. 可以使用defaultValue来指定一个默认值取代null
+     * http://localhost:8088/springmvc/mvc/testRequestParam?username=Tom&age=22
+     * @author luoyong
+     * @create 17:56 2020/1/12
+     * @last modify by [LuoYong 17:56 2020/1/12 ]
+     */
+    @RequestMapping("/testRequestParam")
+    public String testRequestParam(@RequestParam("username") String userName, @RequestParam(value = "age", required = false, defaultValue = "0") int age) {
+        //web: request.getParameter()    request.getParameterMap()
+        System.out.println("testRequestParam...username=" + userName + " age=" + age);
         return "success";
     }
 

@@ -19,29 +19,34 @@
   <br/>
   <a href="mvc/testRequestMapping">Test RequestMapping</a>
   </br>
+
   <%--模拟post请求--%>
   <form action="mvc/testRequestMappingMethod" method="post">
     <input type="submit" value="POST"/>
   </form>
   <br/>
+
   <%--模拟get请求--%>
   <a href="mvc/testRequestMappingMethod">Test RequestMapping</a>
   <br/>
+
+
    <%-- 映射请求参数   以及  请求头信息--%>
   <a href="mvc/testRequestMappingParamsAndHeaders?username=tom&age=22">Test RequestMapping Params  Headers</a>
   <br/>
+
+
   <%--带参数的URL--%>
   <a href="mvc/testPathVariable/Admin/1001">Test PathVaribale</a>
   <br/>
 
+  <%--Rest增删改查--%>
   <!-- 修改一个订单 -->
   <form action="mvc/order" method="post">
     <input type="hidden" name="_method" value="PUT"/>
     <input type="submit" value="REST PUT"/>
   </form>
   <br/>
-
-  <%--Rest增删改查--%>
   <!-- 添加一个新的订单 -->
   <form action="mvc/order" method="post">
     <input type="submit" value="REST POST"/>
@@ -58,5 +63,9 @@
   <a href="mvc/order/1001">REST GET</a>
   <br/>
 
+
+  <%--testRequestParam--%>
+  <a href="mvc/testRequestParam?username=Tom&age=22">Test RequestParam</a>
+  <br/>
   </body>
 </html>
