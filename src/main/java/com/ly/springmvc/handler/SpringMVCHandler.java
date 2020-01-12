@@ -4,6 +4,11 @@ import com.ly.springmvc.dto.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 /**
  * @author luoyong
  * @Description: SpringMvcHandler
@@ -15,6 +20,40 @@ import org.springframework.web.bind.annotation.*;
 public class SpringMVCHandler {
 
 
+    /**
+     * @param request
+     * @param response
+     * @return void
+     * @Description: 测试原生的Servlet API
+     * @author luoyong
+     * @create 19:11 2020/1/12
+     * @last modify by [LuoYong 19:11 2020/1/12 ]
+     */
+    @RequestMapping("/testServletAPI")
+    public void testServletAPI(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("request: " + request);
+
+        System.out.println("response: " + response);
+
+        //转发
+//        request.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(request, response);
+
+        //重定向
+//        response.sendRedirect("http://www.baidu.com");
+
+        //将数据写给客户端
+        response.getWriter().write("Hello SpringMVC");
+    }
+
+
+    /**
+     * @param user
+     * @return java.lang.String
+     * @Description: testPOJO
+     * @author luoyong
+     * @create 19:10 2020/1/12
+     * @last modify by [LuoYong 19:10 2020/1/12 ]
+     */
     @RequestMapping("/testPOJO")
     public String testPOJO(User user) {
         System.out.println("user:" + user);

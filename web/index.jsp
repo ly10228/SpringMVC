@@ -11,6 +11,9 @@
     <title>SpringMVC</title>
   </head>
 
+  <a href="mvc/testServletAPI">Test Servlet API</a>
+  <br/>
+
   <form action="mvc/testPOJO" method="post">
     用户名称: <input type="text" name="userName"/>
     <br/>
