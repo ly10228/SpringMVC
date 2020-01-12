@@ -45,13 +45,14 @@ public class SpringMVCHandler {
      * @return java.lang.String
      * @Description: testRequestMappingParamsAndHeaders
      * 映射请求参数   以及  请求头信息
+     * 注意:headers = {"!Accept-Language"} 没有语言信息会找不到对应处理器 报404
      * AnnotationMethodHandlerAdapter  resolveHandlerMethod 566
      * @author luoyong
      * @create 10:52 2020/1/12
      * @last modify by [LuoYong 10:52 2020/1/12 ]
      */
     @RequestMapping(value = "/testRequestMappingParamsAndHeaders", method = RequestMethod.GET,
-            params = {"username", "age"})
+            params = {"username", "age"}, headers = {"!Accept-Language"})
     public String testRequestMappingParamsAndHeaders() {
         return "success";
     }
