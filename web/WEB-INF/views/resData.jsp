@@ -16,5 +16,9 @@
 userName: ${requestScope.userName}
 <!-- 四个域对象: pageScope  requestScope sessionScope  applicationScope -->
 <br/>
+<br/>
+passWorld: ${requestScope.passWorld}
+<br/>
+loginMsg: ${requestScope.loginMsg }
 </body>
 </html>

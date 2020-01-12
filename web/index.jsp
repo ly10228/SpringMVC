@@ -11,7 +11,16 @@
     <title>SpringMVC</title>
   </head>
 
-
+  <a href="testRedirectView">Test RedirectView</a>
+  <br/>
+  <a href="testViewController">Test ViewController</a>
+  <br/>
+  <a href="testView"> Test View</a>
+  <br/>
+  <a href="testModel">Test Model</a>
+  <br/>
+  <a href="testMap">Test Map</a>
+  <br/>
   <a href="testModelAndView">Test ModelAndView</a>
   <br/>
 
