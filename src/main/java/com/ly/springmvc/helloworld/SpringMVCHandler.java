@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @create 2020-01-11 11:46
  * @last modify by [LuoYong 2020-01-11 11:46]
  **/
-@Controller
+@Controller("helloWorld")
 public class SpringMVCHandler {
 
     /**
      * @param
      * @return java.lang.String
      * @Description: 处理客户端的请求  http://localhost:8080/springmvc/hello
+     * @RequestMapping("/hello") 里面的值是用来做匹配的 不是一个路径 ‘/’写不写都可以
      * @author luoyong
      * @create 11:53 2020/1/11
      * @last modify by [LuoYong 11:53 2020/1/11 ]
