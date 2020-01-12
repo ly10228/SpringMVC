@@ -14,6 +14,20 @@ import org.springframework.web.bind.annotation.*;
 public class SpringMVCHandler {
 
     /**
+     * @param acceptLanguage
+     * @return java.lang.String
+     * @Description:  映射请求头信息到请求处理方法的形参中
+     * @author luoyong
+     * @create 18:42 2020/1/12
+     * @last modify by [LuoYong 18:42 2020/1/12 ]
+     */
+    @RequestMapping("testRequestHeader")
+    public String testRequestHeader(@RequestHeader("Accept-Language") String acceptLanguage) {
+        System.out.println("acceptLanguage:" + acceptLanguage);
+        return "success";
+    }
+
+    /**
      * @param
      * @return java.lang.String
      * @Description: 与请求路径：http://localhost:8088/springmvc/mvc/testRequestMapping 进行匹配
@@ -128,10 +142,10 @@ public class SpringMVCHandler {
      * @param age
      * @return java.lang.String
      * @Description: testRequestParam  映射请求参数到请求处理方法的形参
-     * 	 1. 如果请求参数名与形参名一致， 则可以省略@RequestParam的指定。
-     * 	 2. @RequestParam 注解标注的形参必须要赋值。 必须要能从请求对象中获取到对应的请求参数。
-     * 		可以使用required来设置为不是必须的。
-     * 	 3. 可以使用defaultValue来指定一个默认值取代null
+     * 1. 如果请求参数名与形参名一致， 则可以省略@RequestParam的指定。
+     * 2. @RequestParam 注解标注的形参必须要赋值。 必须要能从请求对象中获取到对应的请求参数。
+     * 可以使用required来设置为不是必须的。
+     * 3. 可以使用defaultValue来指定一个默认值取代null
      * http://localhost:8088/springmvc/mvc/testRequestParam?username=Tom&age=22
      * @author luoyong
      * @create 17:56 2020/1/12

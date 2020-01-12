@@ -10,7 +10,8 @@
   <head>
     <title>SpringMVC</title>
   </head>
-  <br>
+  <a href="mvc/testRequestHeader">Test RequestHeader</a>
+  <br/>
   <!--
     相对路径: 不以/开头的路径 . 相对于当前路径来发送请求.
     绝对路径: 以/开头的路径 . 直接在 http://localhost:8888 后面拼接请求.
