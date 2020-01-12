@@ -1,5 +1,6 @@
 package com.ly.springmvc.handler;
 
+import com.ly.springmvc.dto.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/mvc")
 public class SpringMVCHandler {
+
+
+    @RequestMapping("/testPOJO")
+    public String testPOJO(User user) {
+        System.out.println("user:" + user);
+        return "success";
+    }
 
     /**
      * @param

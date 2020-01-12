@@ -11,6 +11,24 @@
     <title>SpringMVC</title>
   </head>
 
+  <form action="mvc/testPOJO" method="post">
+    用户名称: <input type="text" name="userName"/>
+    <br/>
+    用户密码: <input type="password" name="passWord"/>
+    <br/>
+    用户邮箱: <input type="text" name="email"/>
+    <br/>
+    用户性别: 男 <input type="radio" name="gender" value="1"/>
+    女<input type="radio" name="gender" value="0"/>
+    <br/>
+    <!-- 支持级联的方式 -->
+    用户省份: <input type="text" name="address.province" />
+    <br/>
+    用户城市: <input type="text" name="address.city"/>
+    <br/>
+    <input type="submit" value="注册"/>
+  </form>
+
   <a href="mvc/testCookieValue"> Test CookieValue</a>
   <br/>
 
