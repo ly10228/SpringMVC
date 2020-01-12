@@ -11,6 +11,12 @@
     <title>SpringMVC</title>
   </head>
 
+
+  <a href="testModelAndView">Test ModelAndView</a>
+  <br/>
+
+  <%--testModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndViewtestModelAndView--%>
+
   <a href="mvc/testServletAPI">Test Servlet API</a>
   <br/>
 
