@@ -34,5 +34,29 @@
   <a href="mvc/testPathVariable/Admin/1001">Test PathVaribale</a>
   <br/>
 
+  <!-- 修改一个订单 -->
+  <form action="mvc/order" method="post">
+    <input type="hidden" name="_method" value="PUT"/>
+    <input type="submit" value="REST PUT"/>
+  </form>
+  <br/>
+
+  <%--Rest增删改查--%>
+  <!-- 添加一个新的订单 -->
+  <form action="mvc/order" method="post">
+    <input type="submit" value="REST POST"/>
+  </form>
+  <br/>
+  <!-- 删除id为1001的订单 -->
+  <form action="mvc/order/1001" method="post">
+    <!-- 隐藏域· -->
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="submit" value="REST DELETE"/>
+  </form>
+  <br/>
+  <!-- 查询id为1001的订单 -->
+  <a href="mvc/order/1001">REST GET</a>
+  <br/>
+
   </body>
 </html>

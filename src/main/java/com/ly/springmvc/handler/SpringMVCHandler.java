@@ -1,9 +1,7 @@
 package com.ly.springmvc.handler;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author luoyong
@@ -70,7 +68,59 @@ public class SpringMVCHandler {
      */
     @RequestMapping("/testPathVariable/{name}/{id}")
     public String testPathVariable(@PathVariable("name") String name, @PathVariable("id") Integer id) {
-        System.out.println(name  + " : " + id);
+        System.out.println(name + " : " + id);
+        return "success";
+    }
+
+
+    @RequestMapping(value = "order/{id}", method = RequestMethod.GET)
+    public String testRestGET(@PathVariable("id") Long id) {
+        System.out.println("testRestGET...id:" + id);
+        return "success";
+    }
+
+
+    /**
+     * @param id
+     * @return java.lang.String
+     * @Description: testRestDELETE
+     * 配置REST拦截器 HiddenHttpMethodFilter
+     * 消息 JSP 只允许 GET、POST 或 HEAD。Jasper 还允许 OPTIONS
+     * 描述 请求行中接收的方法由源服务器知道，但目标资源不支持
+     * 解决办法：加@ResponseBody注解
+     * @author luoyong
+     * @create 17:09 2020/1/12
+     * @last modify by [LuoYong 17:09 2020/1/12 ]
+     */
+    @ResponseBody
+    @RequestMapping(value = "/order/{id}", method = RequestMethod.DELETE)
+    public String testRestDELETE(@PathVariable("id") Long id) {
+        System.out.println("REST DELETE: " + id);
+        return "success";
+    }
+
+    /**
+     * @param
+     * @return java.lang.String
+     * @Description: Type Status Report
+     * 消息 JSP 只允许 GET、POST 或 HEAD。Jasper 还允许 OPTIONS
+     * 描述 请求行中接收的方法由源服务器知道，但目标资源不支持
+     * 解决办法：加@ResponseBody注解
+     * @author luoyong
+     * @create 17:30 2020/1/12
+     * @last modify by [LuoYong 17:30 2020/1/12 ]
+     */
+    @ResponseBody
+    @RequestMapping(value = "/order", method = RequestMethod.PUT)
+    public String testRestPUT() {
+        System.out.println("REST PUT");
+        return "success";
+    }
+
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
+    public String testRestPOST() {
+        System.out.println("REST POST");
+
         return "success";
     }
 
