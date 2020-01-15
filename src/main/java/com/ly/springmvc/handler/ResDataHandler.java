@@ -81,6 +81,8 @@ public class ResDataHandler {
      */
     @RequestMapping("/testModel")
     public String testModel(Model model) {
+        //class org.springframework.validation.support.BindingAwareModelMap
+        System.out.println(model.getClass());
         //模型数据 : loginMsg=用户名或者密码错误
         model.addAttribute("loginMsg", "用户名或者密码错误");
         return "resData";
