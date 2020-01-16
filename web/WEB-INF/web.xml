@@ -42,4 +42,6 @@
         <servlet-name>springDispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <context-param> <param-name>kmRootKey</param-name> <param-value>km.root</param-value> </context-param>
 </web-app>
