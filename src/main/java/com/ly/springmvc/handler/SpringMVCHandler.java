@@ -25,6 +25,7 @@ public class SpringMVCHandler {
      * @param response
      * @return void
      * @Description: 测试原生的Servlet API
+     * 查找源码解析 AnnotationMethodHandlerAdapter 566
      * @author luoyong
      * @create 19:11 2020/1/12
      * @last modify by [LuoYong 19:11 2020/1/12 ]
