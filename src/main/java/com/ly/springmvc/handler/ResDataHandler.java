@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * @author luoyong
- * @Description: ResDataHandler
+ * @Description: ResDataHandler 处理响应数据
  * @create 2020-01-12 22:17
  * @last modify by [LuoYong 2020-01-12 22:17]
  **/
