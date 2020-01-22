@@ -91,9 +91,15 @@ public class ResDataHandler {
     /**
      * @param
      * @return java.lang.String
-     * @Description: 视图 View
+     * @Description: 视图 View 1处理模型数据 2完成转发或者重定向的操作
      * DispatcherServlet
      *    945  959 1012  1204
+     *InternalResourceView
+     *     180
+     *AbstractView
+     *     380
+     *InternalResourceView
+     *     189获取转发器
      * @author luoyong
      * @create 23:28 2020/1/12
      * @last modify by [LuoYong 23:28 2020/1/12 ]
