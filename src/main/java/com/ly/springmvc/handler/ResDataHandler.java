@@ -97,7 +97,8 @@ public class ResDataHandler {
      *InternalResourceView
      *     180
      *AbstractView
-     *     380
+     *    266  找到不同的解析器
+     *    380
      *InternalResourceView
      *     189获取转发器
      * @author luoyong
@@ -114,6 +115,14 @@ public class ResDataHandler {
      * @param
      * @return java.lang.String
      * @Description: 重定向
+     * 1 不经过视图解析器
+     * 源码解析
+     * DispatcherServlet
+     *    1204 1225
+     * AbstractView
+     *    266
+     *RedirectView
+     *    261 279 548（Send status code 302 by default.）
      * @author luoyong
      * @create 23:28 2020/1/12
      * @last modify by [LuoYong 23:28 2020/1/12 ]
