@@ -27,6 +27,14 @@ public class TestJsonHandler {
      * @Description: 处理JSON
      * ResponseBody 负责将方法的返回值 转化成json字符串 响应给浏览器端.
      * @author luoyong
+     * 源码
+     * HttpMessageConverter
+     * DispatcherServlet
+     *    945 DispatcherServlet对象
+     *     --handlerAdapters
+     *       --RequestMappingHandlerAdapters
+     *         --messageConverters
+     *           --org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
      * @create 下午3:50 2020/1/26
      * @last modify by [LuoYong 下午3:50 2020/1/26 ]
      */
