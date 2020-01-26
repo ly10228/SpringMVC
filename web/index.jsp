@@ -11,9 +11,12 @@
     <title>SpringMVC</title>
   </head>
 
-  <a href="testJson">Test Json</a>
+  <a href="download">点我下载图片</a>
   <br/>
 
+  <a href="testJson">Test Json</a>
+  <br/>
+  <br/>
 
   <a href="listAllEmp">List All Emps</a>
   <br/>
