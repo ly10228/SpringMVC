@@ -165,6 +165,7 @@ public class SpringMVCHandler {
      * 消息 JSP 只允许 GET、POST 或 HEAD。Jasper 还允许 OPTIONS
      * 描述 请求行中接收的方法由源服务器知道，但目标资源不支持
      * 解决办法：加@ResponseBody注解
+     * 请求路径:http://localhost:8088/springmvc/mvc/testPathVariable/Admin/1001
      * @author luoyong
      * @create 17:09 2020/1/12
      * @last modify by [LuoYong 17:09 2020/1/12 ]

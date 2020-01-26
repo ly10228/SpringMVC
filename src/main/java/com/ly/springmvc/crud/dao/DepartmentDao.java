@@ -1,5 +1,6 @@
 package com.ly.springmvc.crud.dao;
 
+import com.google.common.collect.Lists;
 import com.ly.springmvc.crud.entity.Department;
 import org.springframework.stereotype.Repository;
 
@@ -35,8 +36,10 @@ public class DepartmentDao {
      * @create 下午9:03 2020/1/22
      * @last modify by [LuoYong 下午9:03 2020/1/22 ]
      */
-    private List<Department> listAllDept() {
-        return (List<Department>) departmentMap.values();
+    public List<Department> listAllDept() {
+        List<Department> departments = Lists.newArrayList();
+        departmentMap.values().forEach(item -> departments.add(item));
+        return departments;
     }
 
     /**
