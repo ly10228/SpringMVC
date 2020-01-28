@@ -8,10 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.InputStream;
 import java.util.List;
 
@@ -55,12 +58,12 @@ public class TestJsonHandler {
     /**
      * @param httpSession
      * @return
-     * @Description:  文件下载
+     * @Description: 文件下载
      * 使用HttpMessageConveter完成下载功能
      * 支持@RequestBody   @ResponseBody   HttpEntity  ResponseEntity
      * 原理：
-     *    将服务器端的文件以流的形式写到客户端
-     *ResponseEntity：将要下载的文件数据 以及响应信息封装到ResponseEntity当中。浏览器通过解析发送回去的响应数据，就可以进行一个下载操作
+     * 将服务器端的文件以流的形式写到客户端
+     * ResponseEntity：将要下载的文件数据 以及响应信息封装到ResponseEntity当中。浏览器通过解析发送回去的响应数据，就可以进行一个下载操作
      * @author luoyong
      * @create 下午4:40 2020/1/26
      * @last modify by [LuoYong 下午4:40 2020/1/26 ]
@@ -86,5 +89,29 @@ public class TestJsonHandler {
         HttpStatus statusCode = HttpStatus.OK;
         ResponseEntity<byte[]> re = new ResponseEntity<>(imgs, headers, statusCode);
         return re;
+    }
+
+    /**
+     * @param desc
+     * @param uploadFile
+     * @param session
+     * @return java.lang.String
+     * @Description: 处理文件上传
+     * @author luoyong
+     * @create 下午5:49 2020/1/26
+     * @last modify by [LuoYong 下午5:49 2020/1/26 ]
+     */
+    @RequestMapping("/upload")
+    public String testUploadFile(@RequestParam("desc") String desc,
+                                 @RequestParam("uploadFile") MultipartFile uploadFile,
+                                 HttpSession session) throws Exception {
+        //获取到上传文件的名字
+        String uploadFileName = uploadFile.getOriginalFilename();
+        //获取输入流
+        ServletContext servletContext = session.getServletContext();
+        String realPath = servletContext.getRealPath("uploads");
+        File targetFile = new File(realPath + "/" + uploadFileName);
+        uploadFile.transferTo(targetFile);
+        return "success";
     }
 }
