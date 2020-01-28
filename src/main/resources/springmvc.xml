@@ -39,6 +39,7 @@
 
     <!-- 配置文件的上传
        该bean的id值必须是 multipartResolver , 因为springmvc底层会通过该名字到容器中找对应的bean
+       DispatcherServlet 476
      -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 保证与上传表单所在的Jsp页面的编码一致. -->
