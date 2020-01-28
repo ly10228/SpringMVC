@@ -11,6 +11,9 @@
     <title>SpringMVC</title>
   </head>
 
+  <a href="testInterceptor">Test Interceptor</a>
+  <br/>
+
   <form action="upload" method="post" enctype="multipart/form-data">
       上传文件:<input type="file" name="uploadFile"/>
       <br/>

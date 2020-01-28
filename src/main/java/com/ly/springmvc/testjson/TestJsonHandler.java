@@ -108,10 +108,27 @@ public class TestJsonHandler {
         //获取到上传文件的名字
         String uploadFileName = uploadFile.getOriginalFilename();
         //获取输入流
+        //InputStream in = uploadFile.getInputStream();
+        //获取服务器端的uploads文件夹的真实路径。
         ServletContext servletContext = session.getServletContext();
         String realPath = servletContext.getRealPath("uploads");
         File targetFile = new File(realPath + "/" + uploadFileName);
+        //FileOutputStream  os = new FileOutputStream(targetFile);
+
+        //写文件
+//		int i ;
+//		while((i =  in.read())!=-1) {
+//			os.write(i);
+//		}
+//
+//		in.close();
+//		os.close();
         uploadFile.transferTo(targetFile);
+        return "success";
+    }
+
+    @RequestMapping("/testInterceptor")
+    public String testInterceptor() {
         return "success";
     }
 }

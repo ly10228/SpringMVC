@@ -46,5 +46,22 @@
         <property name="defaultEncoding" value="utf-8"></property>
         <property name="maxUploadSize" value="10485760"></property>
     </bean>
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <!--1. 拦截所有的请求 按照配置顺序来请求 配置在上面的拦截器先被执行-->
+        <bean class="com.ly.springmvc.interceptor.MyFirstInterceptor"></bean>
+        <bean class="com.ly.springmvc.interceptor.MySecondInterceptor"></bean>
+        <!--使用注解用ref-->
+        <!-- <ref bean="myFirstInterceptor"/> -->
+
+        <!-- 2. 指定拦截 或者指定不拦截
+            <mvc:interceptor>
+                <mvc:mapping path="/emps"/>
+                <mvc:exclude-mapping path="/emps"/>
+                <bean class="com.ly.springmvc.interceptor.MyFirstInterceptor"></bean>
+                <ref bean="myFirstInterceptor"/>
+            </mvc:interceptor>
+        -->
+    </mvc:interceptors>
 
 </beans>
