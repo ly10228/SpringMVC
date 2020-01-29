@@ -7,7 +7,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--  1. 组件扫描 -->
-    <context:component-scan base-package="com.ly.springmvc"></context:component-scan>
+    <context:component-scan base-package="com.ly.springmvc" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
     <!--  2. 视图解析器
          工作机制:  prefix + 请求处理方法的返回值 + suffix  =  物理视图路径.

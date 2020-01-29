@@ -26,7 +26,8 @@ public class MySecondInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("{MySecondInterceptor  preHandle}");
-        return false;
+//        return false;
+        return true;
     }
 
     /**
@@ -51,8 +52,7 @@ public class MySecondInterceptor implements HandlerInterceptor {
      * @param handler
      * @param ex
      * @return void
-     * @Description:
-     * [1].在DispatcherServlet的 1030行   视图处理之后执行.(转发/重定向后执行 1012)
+     * @Description: [1].在DispatcherServlet的 1030行   视图处理之后执行.(转发/重定向后执行 1012)
      * [2].当某个拦截器的preHandle返回false后，也会执行当前拦截器之前拦截器的afterCompletion
      * @author luoyong
      * @create 下午10:19 2020/1/28

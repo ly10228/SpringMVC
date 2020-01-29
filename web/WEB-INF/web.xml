@@ -32,6 +32,15 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 初始化SpringIOC容器的监听器 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <!-- Springmvc的前端控制器 / 核心控制器:  DispatcherServlet -->
     <servlet>
