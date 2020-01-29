@@ -1,7 +1,7 @@
 package com.ly.springmvc.ss.beans;
 
 public class Person {
-	private String name ="SpringMvc+Springz";
+	private String name ="SpringMvc+Spring";
 
 	public String getName() {
 		return name;
